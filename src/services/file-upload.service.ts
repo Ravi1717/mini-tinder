@@ -23,7 +23,6 @@ export class FileUploadProvider implements Provider<FileUploadHandler>
   }
 
   value(): FileUploadHandler {
-    console.log('service', this.options);
     return multer(this.options).any();
   }
 }

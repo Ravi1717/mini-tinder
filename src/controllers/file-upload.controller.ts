@@ -39,7 +39,6 @@ export class FileUploadControllerController {
       this.handler(request, response, (err: unknown) => {
         if (err) reject(err);
         else {
-          console.log('response', response);
           resolve(FileUploadControllerController.getFilesAndFields(request));
         }
       });
@@ -54,6 +53,7 @@ export class FileUploadControllerController {
       encoding: f.encoding,
       mimetype: f.mimetype,
       size: f.size,
+      path: f.path
     });
     let files: object[] = [];
     if (Array.isArray(uploadedFiles)) {
